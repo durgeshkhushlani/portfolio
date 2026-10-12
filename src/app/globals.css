@@ -60,3 +60,27 @@ button,
 .group:hover .logo-text {
   animation: logo-tilt 1.6s ease-in-out infinite;
 }
+
+@keyframes tile-pop {
+  0% {
+    transform: scale(1);
+    border-color: var(--border);
+  }
+  35% {
+    transform: scale(1.22);
+    border-color: var(--accent-strong);
+  }
+  100% {
+    transform: scale(1);
+    border-color: var(--border);
+  }
+}
+
+.tech-tile {
+  transform-origin: center;
+}
+
+.tech-tile.is-popping {
+  animation: tile-pop 420ms ease-out both;
+  animation-delay: var(--delay, 0ms);
+}

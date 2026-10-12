@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
+import Skills from "@/components/sections/Skills";
 
 export default function Home() {
   return (
@@ -8,16 +9,7 @@ export default function Home() {
       <Hero />
       <About />
       <Projects />
-
-      <section
-        id="skills"
-        className="flex min-h-screen flex-col items-start justify-center gap-4 px-6 sm:px-16"
-      >
-        <p className="font-mono text-sm text-accent">03 / skills</p>
-        <h2 className="font-display text-4xl uppercase text-foreground sm:text-5xl">
-          Skills
-        </h2>
-      </section>
+      <Skills />
 
       <section
         id="contact"
