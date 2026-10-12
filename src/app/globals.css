@@ -1,13 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0e14;
-  --background-elevated: #10151d;
-  --foreground: #e8eef2;
-  --foreground-dim: #8a94a3;
+  --background: #11141a;
+  --background-elevated: #1a1e26;
+  --foreground: #edf0f4;
+  --foreground-dim: #9aa3b2;
   --accent: #5eead4;
   --accent-strong: #22d3ee;
   --border: rgba(94, 234, 212, 0.25);
+}
+
+:root[data-theme="light"] {
+  --background: #f6f7f9;
+  --background-elevated: #ffffff;
+  --foreground: #12151b;
+  --foreground-dim: #565f6e;
+  --accent: #0f766e;
+  --accent-strong: #0891b2;
+  --border: rgba(15, 118, 110, 0.25);
 }
 
 @theme inline {
@@ -26,6 +36,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
   cursor:
     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="%2322d3ee" stroke-width="1.5"><path d="M12 1.5 L12 6.5 M12 17.5 L12 22.5 M1.5 12 L6.5 12 M17.5 12 L22.5 12"/><circle cx="12" cy="12" r="1.6" fill="%2322d3ee" stroke="none"/></g></svg>')
       12 12,

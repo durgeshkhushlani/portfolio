@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import HudFrame from "./HudFrame";
+import ThemeToggle from "./ThemeToggle";
 import { navLinks, site } from "@/data/site";
 
 export default function NavBar() {
@@ -57,13 +58,16 @@ export default function NavBar() {
           })}
         </nav>
 
-        <a
-          href="#contact"
-          className="flex items-center gap-2 border border-accent-strong px-3 py-1.5 font-mono text-xs uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-accent-strong/10"
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          {site.ctaLabel}
-        </a>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <a
+            href="#contact"
+            className="flex items-center gap-2 border border-accent-strong px-3 py-1.5 font-mono text-xs uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-accent-strong/10"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+            {site.ctaLabel}
+          </a>
+        </div>
       </HudFrame>
     </header>
   );
