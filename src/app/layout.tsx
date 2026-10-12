@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Durgesh Khushlani — AI Engineer & Backend Engineer",
+  title: "Durgesh Khushlani — AI Engineer & Backend Developer",
   description:
-    "Portfolio of Durgesh Khushlani, an AI Engineer and Backend Engineer building production RAG and multi-agent systems.",
+    "Portfolio of Durgesh Khushlani, an AI Engineer and Backend Developer building production RAG and multi-agent systems.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -26,4 +26,37 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  cursor:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="%2322d3ee" stroke-width="1.5"><path d="M12 1.5 L12 6.5 M12 17.5 L12 22.5 M1.5 12 L6.5 12 M17.5 12 L22.5 12"/><circle cx="12" cy="12" r="1.6" fill="%2322d3ee" stroke="none"/></g></svg>')
+      12 12,
+    auto;
+}
+
+a,
+button,
+[role="button"] {
+  cursor:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="%2322d3ee" stroke-width="1.5"><path d="M12 0.5 L12 5.5 M12 18.5 L12 23.5 M0.5 12 L5.5 12 M18.5 12 L23.5 12"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.4" fill="%2322d3ee" stroke="none"/></g></svg>')
+      12 12,
+    pointer;
+}
+
+@keyframes logo-tilt {
+  0%,
+  100% {
+    transform: rotate3d(1, 1, 0, 0deg);
+  }
+  25% {
+    transform: rotate3d(1, 0.6, 0, 20deg);
+  }
+  50% {
+    transform: rotate3d(-1, 1, 0, -18deg);
+  }
+  75% {
+    transform: rotate3d(0.6, -1, 0, 18deg);
+  }
+}
+
+.group:hover .logo-text {
+  animation: logo-tilt 1.6s ease-in-out infinite;
 }

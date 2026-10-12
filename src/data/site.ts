@@ -1,10 +1,10 @@
 export const site = {
   name: "Durgesh Khushlani",
   logoMark: "DK",
-  roles: ["AI Engineer", "Backend Engineer"],
+  roles: ["AI Engineer", "Backend Developer"],
   tagline: "I build systems that think.",
   shortBio:
-    "I'm Durgesh — an AI Engineer and Backend Engineer who builds systems that solve real problems, not just demos. I care about system design: how the pieces fit together, not just whether a feature works. Currently building production-grade multi-agent and RAG systems with LangGraph and LangChain.",
+    "I'm Durgesh — an AI Engineer and Backend Developer who builds systems that solve real problems, not just demos. I care about system design: how the pieces fit together, not just whether a feature works. Currently building production-grade multi-agent and RAG systems with LangGraph and LangChain.",
   email: "durgeshkhushlani@gmail.com",
   github: "https://github.com/durgeshkhushlani",
   linkedin: "https://www.linkedin.com/in/durgesh-khushlani-912366324/",

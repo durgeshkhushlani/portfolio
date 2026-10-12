@@ -31,9 +31,11 @@ export default function NavBar() {
       <HudFrame className="flex w-full max-w-5xl items-center justify-between gap-6 px-5 py-3">
         <a
           href="#home"
-          className="font-display text-lg uppercase tracking-wide text-accent"
+          className="group relative flex h-12 w-12 items-center justify-center [perspective:220px]"
         >
-          {site.logoMark}
+          <span className="logo-text inline-block font-mono text-2xl font-black uppercase tracking-tight text-accent transition-[filter] duration-300 group-hover:drop-shadow-[0_0_6px_var(--accent-strong)]">
+            {site.logoMark}
+          </span>
         </a>
 
         <nav className="hidden items-center gap-6 font-mono text-xs uppercase tracking-[0.2em] sm:flex">
