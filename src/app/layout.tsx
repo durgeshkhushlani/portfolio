@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Doto, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/NavBar";
+import ScrollSpyDots from "@/components/ScrollSpyDots";
 
 const doto = Doto({
   variable: "--font-doto",
@@ -25,7 +27,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${doto.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <NavBar />
+        <ScrollSpyDots />
+        {children}
+      </body>
     </html>
   );
 }
