@@ -58,7 +58,6 @@ export default function Skills() {
       className="flex min-h-screen flex-col justify-center gap-10 px-6 py-24 sm:px-16"
     >
       <div>
-        <p className="font-mono text-sm text-accent">03 / skills</p>
         <h2 className="font-display font-black text-4xl uppercase text-foreground sm:text-5xl">
           Skills
         </h2>

@@ -37,7 +37,6 @@ export default function Contact() {
       className="flex min-h-screen flex-col justify-center gap-12 px-6 py-24 sm:px-16"
     >
       <div>
-        <p className="font-mono text-sm text-accent">04 / contact</p>
         <h2 className="font-display font-black text-4xl uppercase text-foreground sm:text-5xl">
           Contact
         </h2>

@@ -173,7 +173,6 @@ export default function Projects() {
     >
       <div className="flex items-center justify-between">
         <div>
-          <p className="font-mono text-sm text-accent">02 / projects</p>
           <h2 className="font-display font-black text-4xl uppercase text-foreground sm:text-5xl">
             Projects
           </h2>

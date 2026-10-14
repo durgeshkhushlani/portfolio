@@ -8,14 +8,13 @@ export default function About() {
       className="flex min-h-screen flex-col items-start justify-center gap-8 px-6 py-24 sm:px-16"
     >
       <div>
-        <p className="font-mono text-sm text-accent">01 / about</p>
         <h2 className="font-display font-black text-4xl uppercase text-foreground sm:text-5xl">
           About
         </h2>
       </div>
 
       <div className="grid w-full gap-8 lg:grid-cols-[2fr_1fr]">
-        <div className="flex flex-col gap-4 font-mono text-sm leading-relaxed text-foreground-dim sm:text-base">
+        <div className="flex flex-col gap-4 font-mono text-sm leading-relaxed text-foreground-dim sm:text-lg">
           {site.longBio.map((paragraph) => (
             <p key={paragraph.slice(0, 24)}>{paragraph}</p>
           ))}
