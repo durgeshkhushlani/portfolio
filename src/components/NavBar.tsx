@@ -28,17 +28,17 @@ export default function NavBar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/70 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 sm:px-10">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-6 sm:px-10">
         <a
           href="#home"
-          className="group relative flex h-10 w-10 items-center justify-center [perspective:220px]"
+          className="group relative flex h-12 w-12 items-center justify-center [perspective:220px]"
         >
-          <span className="logo-text inline-block font-mono text-xl font-black uppercase tracking-tight text-accent transition-[filter] duration-300 group-hover:drop-shadow-[0_0_6px_var(--accent-strong)]">
+          <span className="logo-text inline-block font-mono text-2xl font-black uppercase tracking-tight text-accent transition-[filter] duration-300 group-hover:drop-shadow-[0_0_6px_var(--accent-strong)]">
             {site.logoMark}
           </span>
         </a>
 
-        <nav className="hidden items-center gap-7 font-mono text-xs uppercase tracking-[0.15em] sm:flex">
+        <nav className="hidden items-center gap-8 font-mono text-sm uppercase tracking-[0.15em] sm:flex">
           {navLinks.map((link) => {
             const isActive = active === link.href;
             return (
@@ -77,11 +77,11 @@ export default function NavBar() {
           })}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-5">
           <ThemeToggle />
           <a
             href="#contact"
-            className="flex items-center gap-2 border border-accent-strong px-3 py-1.5 font-mono text-xs uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-accent-strong/10"
+            className="flex items-center gap-2 border border-accent-strong px-4 py-2 font-mono text-sm uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-accent-strong/10"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             {site.ctaLabel}

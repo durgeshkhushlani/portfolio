@@ -61,10 +61,24 @@ function Card({
     >
       {isActive ? (
         <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
-          <HudFrame className="flex min-h-48 items-center justify-center sm:min-h-full">
-            <p className="font-display text-2xl font-bold uppercase tracking-wide text-foreground-dim/40">
-              {project.name}
-            </p>
+          <HudFrame
+            className={`flex items-center justify-center ${
+              project.image ? "self-center" : "min-h-48 sm:min-h-full"
+            }`}
+          >
+            {project.image ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={project.image}
+                alt={`${project.name} screenshot`}
+                draggable={false}
+                className="block h-auto w-full select-none"
+              />
+            ) : (
+              <p className="font-display text-2xl font-bold uppercase tracking-wide text-foreground-dim/40">
+                {project.name}
+              </p>
+            )}
           </HudFrame>
 
           <div className="flex flex-col justify-center gap-3">
@@ -100,9 +114,19 @@ function Card({
       ) : (
         <>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="font-display text-xl font-black uppercase text-foreground-dim/25">
-              {project.name}
-            </span>
+            {project.image ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={project.image}
+                alt=""
+                draggable={false}
+                className="h-full w-full select-none object-contain"
+              />
+            ) : (
+              <span className="font-display text-xl font-black uppercase text-foreground-dim/25">
+                {project.name}
+              </span>
+            )}
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 to-transparent p-3 pt-8">
             <h3 className="font-display text-sm font-black uppercase text-foreground">

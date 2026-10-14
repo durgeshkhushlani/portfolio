@@ -7,6 +7,7 @@ export type Project = {
   githubUrl: string;
   year: string;
   status: string;
+  image?: string;
 };
 
 export const projects: Project[] = [
@@ -21,6 +22,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/durgeshkhushlani/HireSphere",
     year: "2026",
     status: "In progress (v2 rebuild)",
+    image: "/images/hiresphere.png",
   },
   {
     name: "Orbit",
@@ -44,6 +46,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/durgeshkhushlani/CampusOne-Personal",
     year: "2025-2026",
     status: "Completed (academic capstone)",
+    image: "/images/campusone.png",
   },
   {
     name: "Veritas",
