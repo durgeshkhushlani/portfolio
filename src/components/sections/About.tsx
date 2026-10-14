@@ -9,7 +9,7 @@ export default function About() {
     >
       <div>
         <p className="font-mono text-sm text-accent">01 / about</p>
-        <h2 className="font-display text-4xl uppercase text-foreground sm:text-5xl">
+        <h2 className="font-display font-black text-4xl uppercase text-foreground sm:text-5xl">
           About
         </h2>
       </div>

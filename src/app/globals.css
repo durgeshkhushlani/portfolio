@@ -30,7 +30,7 @@
   --color-border: var(--border);
   --font-sans: var(--font-geist-mono);
   --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-doto);
+  --font-display: var(--font-unbounded);
 }
 
 body {
@@ -40,8 +40,8 @@ body {
     background-color 0.25s ease,
     color 0.25s ease;
   cursor:
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="%2322d3ee" stroke-width="1.5"><path d="M12 1.5 L12 6.5 M12 17.5 L12 22.5 M1.5 12 L6.5 12 M17.5 12 L22.5 12"/><circle cx="12" cy="12" r="1.6" fill="%2322d3ee" stroke="none"/></g></svg>')
-      12 12,
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="2.5" fill="%2322d3ee"/><circle cx="11" cy="11" r="8" fill="none" stroke="%2322d3ee" stroke-width="1" opacity="0.5"/></svg>')
+      11 11,
     auto;
 }
 
@@ -49,9 +49,40 @@ a,
 button,
 [role="button"] {
   cursor:
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="%2322d3ee" stroke-width="1.5"><path d="M12 0.5 L12 5.5 M12 18.5 L12 23.5 M0.5 12 L5.5 12 M18.5 12 L23.5 12"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.4" fill="%2322d3ee" stroke="none"/></g></svg>')
-      12 12,
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="3" fill="%2322d3ee"/><circle cx="13" cy="13" r="10" fill="%2322d3ee" fill-opacity="0.12" stroke="%2322d3ee" stroke-width="1"/></svg>')
+      13 13,
     pointer;
+}
+
+.hud-ring {
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 1px;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.group:hover .hud-ring {
+  opacity: 1;
+}
+
+.hud-ring-spin {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 300deg,
+    var(--accent-strong) 340deg,
+    var(--accent-strong) 360deg
+  );
+  animation: hud-ring-spin 2.2s linear infinite;
+}
+
+@keyframes hud-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes logo-tilt {

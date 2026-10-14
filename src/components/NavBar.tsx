@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import HudFrame from "./HudFrame";
 import ThemeToggle from "./ThemeToggle";
 import { navLinks, site } from "@/data/site";
 
@@ -28,37 +27,57 @@ export default function NavBar() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
-      <HudFrame className="flex w-full max-w-5xl items-center justify-between gap-6 px-5 py-3">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/70 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 sm:px-10">
         <a
           href="#home"
-          className="group relative flex h-12 w-12 items-center justify-center [perspective:220px]"
+          className="group relative flex h-10 w-10 items-center justify-center [perspective:220px]"
         >
-          <span className="logo-text inline-block font-mono text-2xl font-black uppercase tracking-tight text-accent transition-[filter] duration-300 group-hover:drop-shadow-[0_0_6px_var(--accent-strong)]">
+          <span className="logo-text inline-block font-mono text-xl font-black uppercase tracking-tight text-accent transition-[filter] duration-300 group-hover:drop-shadow-[0_0_6px_var(--accent-strong)]">
             {site.logoMark}
           </span>
         </a>
 
-        <nav className="hidden items-center gap-6 font-mono text-xs uppercase tracking-[0.2em] sm:flex">
+        <nav className="hidden items-center gap-7 font-mono text-xs uppercase tracking-[0.15em] sm:flex">
           {navLinks.map((link) => {
             const isActive = active === link.href;
             return (
               <a
                 key={link.href}
                 href={link.href}
-                className={`border px-2 py-1 transition-colors ${
+                className={`group/link relative flex items-center gap-1.5 transition-colors ${
                   isActive
-                    ? "border-accent-strong text-foreground"
-                    : "border-transparent text-foreground-dim hover:text-foreground"
+                    ? "text-foreground"
+                    : "text-foreground-dim hover:text-foreground"
                 }`}
               >
+                <span className="relative inline-flex h-[1em] w-[0.8em] items-center justify-center overflow-hidden align-middle">
+                  <span
+                    className={`absolute inset-0 flex items-center justify-center leading-none transition-transform duration-300 ${
+                      isActive
+                        ? "-translate-y-full"
+                        : "group-hover/link:-translate-y-full"
+                    }`}
+                  >
+                    /
+                  </span>
+                  <span
+                    className={`absolute inset-0 flex translate-y-full items-center justify-center leading-none transition-transform duration-300 ${
+                      isActive
+                        ? "!translate-y-0"
+                        : "group-hover/link:translate-y-0"
+                    }`}
+                  >
+                    →
+                  </span>
+                </span>
                 {link.label}
               </a>
             );
           })}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <ThemeToggle />
           <a
             href="#contact"
@@ -68,7 +87,7 @@ export default function NavBar() {
             {site.ctaLabel}
           </a>
         </div>
-      </HudFrame>
+      </div>
     </header>
   );
 }

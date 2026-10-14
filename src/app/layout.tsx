@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Doto, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Unbounded } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import ScrollSpyDots from "@/components/ScrollSpyDots";
+import Starfield from "@/components/Starfield";
 import { themeInitScript } from "@/components/ThemeToggle";
-
-const doto = Doto({
-  variable: "--font-doto",
-  subsets: ["latin"],
-  axes: ["ROND"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const unbounded = Unbounded({
+  variable: "--font-unbounded",
   subsets: ["latin"],
 });
 
@@ -28,15 +28,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${doto.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistMono.variable} ${unbounded.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Script id="theme-init" strategy="beforeInteractive">
           {themeInitScript}
         </Script>
-        <NavBar />
-        <ScrollSpyDots />
-        {children}
+        <Starfield />
+        <div className="relative z-10 flex min-h-full flex-col">
+          <NavBar />
+          <ScrollSpyDots />
+          {children}
+        </div>
       </body>
     </html>
   );

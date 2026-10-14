@@ -16,7 +16,7 @@ export default function HudFrame({
 }) {
   return (
     <div
-      className={`relative border border-border bg-background-elevated/60 backdrop-blur ${className}`}
+      className={`group relative overflow-hidden border border-border bg-background-elevated/60 backdrop-blur transition-transform duration-300 hover:scale-[1.02] ${className}`}
     >
       {corners.map((corner) => (
         <span
@@ -24,6 +24,9 @@ export default function HudFrame({
           className={`pointer-events-none absolute h-3 w-3 border-accent-strong ${corner}`}
         />
       ))}
+      <div className="hud-ring pointer-events-none absolute inset-0">
+        <div className="hud-ring-spin absolute inset-[-150%]" />
+      </div>
       {children}
     </div>
   );
