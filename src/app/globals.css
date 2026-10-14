@@ -11,13 +11,28 @@
 }
 
 :root[data-theme="light"] {
-  --background: #f6f7f9;
+  --background: #eef3f7;
   --background-elevated: #ffffff;
-  --foreground: #12151b;
-  --foreground-dim: #565f6e;
+  --foreground: #0f172a;
+  --foreground-dim: #475569;
   --accent: #0f766e;
   --accent-strong: #0891b2;
-  --border: rgba(15, 118, 110, 0.25);
+  --border: rgba(15, 118, 110, 0.28);
+}
+
+:root[data-theme="light"] body {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 70% 50% at 12% 0%, rgba(34, 211, 238, 0.22), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 92% 18%, rgba(94, 234, 212, 0.25), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(129, 140, 248, 0.14), transparent 65%),
+    radial-gradient(rgba(15, 23, 42, 0.07) 1px, transparent 1px);
+  background-size: auto, auto, auto, 24px 24px;
+  background-attachment: fixed;
+}
+
+:root[data-theme="light"] [class*="bg-background-elevated"] {
+  box-shadow: 0 8px 30px -12px rgba(15, 23, 42, 0.18);
 }
 
 @theme inline {
